@@ -44,7 +44,7 @@
     "@types/styled-components": "^4.4.0",
     "@testing-library/react": "9.4.0",
     "@types/styled-system": "5.1.2",
-    "babel-plugin-macros": "2.6.1",
+    "babel-plugin-macros": "2.8.0",
     "babel-polyfill": "6.26.0",
     "classnames": "^2.2.5",
     "details-element-polyfill": "2.4.0",
