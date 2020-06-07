@@ -52,8 +52,8 @@
     "nanoid": "2.1.4",
     "primer-colors": "1.0.1",
     "primer-typography": "1.0.1",
-    "react": "^16.10.2",
-    "react-is": "16.10.2",
+    "react": "^16.13.1",
+    "react-is": "16.13.1",
     "styled-system": "5.1.2"
   },
   "devDependencies": {
