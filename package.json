@@ -48,7 +48,7 @@
     "babel-polyfill": "6.26.0",
     "classnames": "^2.2.5",
     "details-element-polyfill": "2.4.0",
-    "jest-axe": "3.2.0",
+    "jest-axe": "3.4.0",
     "nanoid": "2.1.4",
     "primer-colors": "1.0.1",
     "primer-typography": "1.0.1",
