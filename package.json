@@ -43,7 +43,7 @@
     "@styled-system/theme-get": "5.1.2",
     "@types/styled-components": "^4.4.0",
     "@testing-library/react": "9.4.0",
-    "@types/styled-system": "5.1.2",
+    "@types/styled-system": "5.1.9",
     "babel-plugin-macros": "2.6.1",
     "babel-polyfill": "6.26.0",
     "classnames": "^2.2.5",
