@@ -1,6 +1,6 @@
 import React from 'react'
 import {Heading} from '..'
-import {render} from '../utils/testing'
+import {render, behavesAsComponent, checkExports} from '../utils/testing'
 import {TYPOGRAPHY, COMMON} from '../constants'
 import {render as HTMLRender, cleanup} from '@testing-library/react'
 import {axe, toHaveNoViolations} from 'jest-axe'
@@ -31,8 +31,14 @@ const theme = {
 }
 
 describe('Heading', () => {
-  it('renders <h1> by default', () => {
-    expect(render(<Heading />).type).toEqual('h1')
+  behavesAsComponent(Heading, [COMMON, TYPOGRAPHY])
+
+  checkExports('Heading', {
+    default: Heading
+  })
+
+  it('renders <h2> by default', () => {
+    expect(render(<Heading />).type).toEqual('h2')
   })
 
   it('should have no axe violations', async () => {
@@ -40,14 +46,6 @@ describe('Heading', () => {
     const results = await axe(container)
     expect(results).toHaveNoViolations()
     cleanup()
-  })
-
-  it('has default theme', () => {
-    expect(Heading).toSetDefaultTheme()
-  })
-
-  it('respects the is prop', () => {
-    expect(render(<Heading as="h6" />).type).toEqual('h6')
   })
 
   it('respects fontWeight', () => {
@@ -94,7 +92,6 @@ describe('Heading', () => {
 
   it('respects the "fontStyle" prop', () => {
     expect(render(<Heading fontStyle="italic" />)).toHaveStyleRule('font-style', 'italic')
-    expect(render(<Heading as="i" fontStyle="normal" />)).toHaveStyleRule('font-style', 'normal')
   })
 
   it.skip('renders fontSize with f* classes using inverse scale', () => {
@@ -116,10 +113,5 @@ describe('Heading', () => {
   it.skip('respects other values for fontSize', () => {
     expect(render(<Heading fontSize="2em" theme={theme} />)).toHaveStyleRule('font-size', '2em')
     expect(render(<Heading fontSize={100} theme={theme} />)).toHaveStyleRule('font-size', '100px')
-  })
-
-  it('implements system props', () => {
-    expect(Heading).toImplementSystemProps(TYPOGRAPHY)
-    expect(Heading).toImplementSystemProps(COMMON)
   })
 })
